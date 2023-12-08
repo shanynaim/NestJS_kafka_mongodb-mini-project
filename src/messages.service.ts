@@ -9,6 +9,7 @@ export class MessagesService {
   constructor(
     @InjectModel(Messages.name)
     private readonly messagesModel: Model<MessagesDocument>,
+    //This indicates that the model deals with documents conforming to the MessagesDocument type.
   ) {}
 
   async createMessage(message: string): Promise<MessagesDocument> {

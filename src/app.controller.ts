@@ -7,6 +7,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
+  // Render -Decorator indicating that the root method should render a view named 'index'.
   @Render('index')
   root() {
     return { message: 'Hello!' };
@@ -16,8 +17,6 @@ export class AppController {
   message(@Body() body: Body) {
     return this.appService.messageHandler(body['message']);
   }
-  // @Get()
-  // getHello(): string {
-  //   return this.appService.getHello();
+
   // }
 }
