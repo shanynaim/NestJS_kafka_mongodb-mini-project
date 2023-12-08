@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>sendMessage</title>
+  </head>
+  <body>
+    <h1>{{message}}</h1>
+    <form action='/message' method='POST'>
+      <label for='message'>Message:</label>
+      <input type='text' id='message' name='message' required />
+      <br />
+      <input type='submit' value='Send Message' />
+    </form>
+  </body>
+</html>
