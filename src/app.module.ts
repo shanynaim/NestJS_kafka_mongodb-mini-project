@@ -1,21 +1,17 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ProducerKafka } from 'kafka/producerKafka';
-import { MongooseModule } from '@nestjs/mongoose';
-import { MessagesService } from './messages.service';
-import { Messages, MessagesSchema } from '../schemas/message.schema'; // Assuming the correct path
 
+import { MongooseModule } from '@nestjs/mongoose';
+
+import { UserModule } from './user.module';
+import { MessagesModule } from './messages.module';
 @Module({
   imports: [
     MongooseModule.forRoot(
       'mongodb+srv://shany215sn:9i6dpOi2qYODeMxp@cluster0.fk1u4fq.mongodb.net/decisionApp?retryWrites=true&w=majority',
     ),
-    MongooseModule.forFeature([
-      { name: Messages.name, schema: MessagesSchema },
-    ]),
+
+    UserModule,
+    MessagesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, ProducerKafka, MessagesService],
 })
 export class AppModule {}

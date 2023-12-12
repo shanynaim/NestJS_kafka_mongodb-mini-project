@@ -25,6 +25,6 @@ export class ProducerKafka implements OnModuleInit, OnApplicationShutdown {
   async produce(record: ProducerRecord) {
     console.log('in produce message');
     await this.producer.send(record);
-    console.log('message sent from producer:' + record);
+    console.log('message sent from producer');
   }
 }
