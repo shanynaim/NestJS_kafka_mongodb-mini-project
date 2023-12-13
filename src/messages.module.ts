@@ -5,8 +5,8 @@ import { MessagesService } from './messages.service';
 
 import { MongooseModule } from '@nestjs/mongoose';
 import { Messages, MessagesSchema } from '../schemas/message.schema';
-import { ProducerKafka } from 'kafka/producerKafka';
-import { UserService } from './user.service';
+import { ProducerKafka } from '../kafka/producerKafka';
+
 import { UserModule } from './user.module';
 
 @Module({
