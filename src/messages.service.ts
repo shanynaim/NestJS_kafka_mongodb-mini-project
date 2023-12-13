@@ -43,6 +43,15 @@ export class MessagesService {
     try {
       const createdMessage = new this.messagesModel({ message });
       console.log('message ' + createdMessage['message'] + ' created');
+      createdMessage
+        .save()
+        .then((savedDocument) => {
+          console.log('Document saved:', savedDocument);
+        })
+        .catch((error) => {
+          console.error('Error saving document:', error);
+        });
+
       return createdMessage['message'];
     } catch (error) {
       console.log(error);
