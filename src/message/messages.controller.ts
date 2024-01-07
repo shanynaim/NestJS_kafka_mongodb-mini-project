@@ -11,13 +11,6 @@ import {
 import { MessagesService } from './messages.service';
 import { AuthGuard } from '@nestjs/passport';
 
-function printObjectKeysAndValues(obj: any): void {
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      console.log(`${key}: ${obj[key]}`);
-    }
-  }
-}
 @Controller('message')
 export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
@@ -29,7 +22,6 @@ export class MessagesController {
     if (!req.isAuthenticated() || !req.user) {
       return 'Authentication failed!';
     } else {
-      printObjectKeysAndValues(req.user);
       return { message: `please enter your message here` };
     }
   }
