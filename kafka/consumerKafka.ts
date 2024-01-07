@@ -19,7 +19,6 @@ export class ConsumerKafka implements OnApplicationShutdown {
 
   private readonly consumerConfig: ConsumerConfig = {
     groupId: 'nestjs-consumer',
-    // Add other consumer configuration options as needed
   };
 
   private readonly consumer: Consumer = this.kafka.consumer(

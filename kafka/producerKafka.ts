@@ -9,10 +9,12 @@ import { Kafka, Producer, ProducerRecord } from 'kafkajs';
 @Injectable()
 export class ProducerKafka implements OnModuleInit, OnApplicationShutdown {
   async onApplicationShutdown() {
+    console.log('kafka producer shutdown');
     await this.producer.disconnect();
   }
 
   async onModuleInit() {
+    console.log('kafka producer on module init');
     await this.producer.connect();
   }
 
