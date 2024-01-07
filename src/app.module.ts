@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserModule } from './user/user.module';
 import { MessagesModule } from './message/messages.module';
 import { config } from 'dotenv';
 config();
@@ -13,7 +12,6 @@ import { AuthModule } from './auth/auth.module';
     ),
 
     AuthModule,
-    UserModule,
     MessagesModule,
   ],
 })
